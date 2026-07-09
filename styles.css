@@ -36,7 +36,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: var(--ink);
-  font-family: "Pixelify Sans", "Trebuchet MS", sans-serif;
+  font-family: "Press Start 2P", monospace;
   background:
     linear-gradient(
       180deg,
@@ -82,7 +82,7 @@ body::after {
 }
 
 button {
-  font-family: "Press Start 2P", monospace;
+  font-family: inherit;
   letter-spacing: 0;
 }
 
@@ -91,7 +91,6 @@ button {
 .bonus-box p,
 .window-header strong,
 .status-text {
-  font-family: "Press Start 2P", monospace;
   font-size: 0.62rem;
   letter-spacing: 0;
   line-height: 1.6;
@@ -284,19 +283,23 @@ button {
 
 .oracle-layout {
   display: grid;
-  grid-template-columns: minmax(350px, 0.9fr) minmax(420px, 1.1fr);
-  gap: 34px;
+  grid-template-columns: minmax(360px, 0.92fr) minmax(0, 1.08fr);
+  gap: 30px;
   align-items: center;
   padding: clamp(24px, 4vw, 42px);
 }
 
+.intro-copy {
+  min-width: 0;
+}
+
 .pixel-scene {
   position: relative;
-  min-height: 420px;
+  min-height: 390px;
   overflow: hidden;
   border: 4px solid #654031;
   background:
-    radial-gradient(circle at 50% 58%, rgba(255, 195, 78, 0.3) 0 18%, transparent 36%),
+    radial-gradient(circle at 50% 62%, rgba(255, 195, 78, 0.24) 0 17%, transparent 38%),
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0 8px, transparent 8px 16px),
     linear-gradient(180deg, #233c56 0%, #1b5a49 68%, #2c7048 69%);
   box-shadow: inset 0 -14px 0 rgba(22, 60, 49, 0.38);
@@ -304,72 +307,84 @@ button {
 
 .scene-glow {
   position: absolute;
-  inset: 24% 16% 12%;
+  inset: 30% 18% 14%;
   background: radial-gradient(circle, rgba(255, 209, 98, 0.42), transparent 58%);
   animation: pulse 2.8s ease-in-out infinite;
 }
 
 .fern {
   position: absolute;
-  bottom: 54px;
-  width: 120px;
-  height: 150px;
-  animation: sway 4.8s ease-in-out infinite;
+  bottom: 48px;
+  width: 142px;
+  height: 112px;
 }
 
 .fern-left {
-  left: 42px;
+  left: 34px;
 }
 
 .fern-right {
-  right: 42px;
+  right: 34px;
   transform: scaleX(-1);
-  animation-delay: -1.5s;
 }
 
 .fern span {
   position: absolute;
-  bottom: 0;
-  left: 54px;
-  width: 12px;
-  height: 126px;
-  background: var(--fern-dark);
+  display: block;
+  border: 4px solid #184a35;
+  background: var(--fern);
   transform-origin: bottom;
 }
 
-.fern span::before,
-.fern span::after {
-  position: absolute;
-  width: 48px;
-  height: 13px;
-  content: "";
-  background: var(--fern);
+.fern span:nth-child(1) {
+  left: 64px;
+  bottom: 0;
+  width: 16px;
+  height: 96px;
+  background: var(--fern-dark);
+  transform: rotate(4deg);
 }
 
-.fern span::before {
-  top: 22px;
-  right: 8px;
-  transform: rotate(-24deg);
+.fern span:nth-child(2) {
+  left: 12px;
+  bottom: 45px;
+  width: 84px;
+  height: 18px;
+  transform: rotate(-18deg);
 }
 
-.fern span::after {
-  top: 44px;
-  left: 8px;
-  transform: rotate(24deg);
+.fern span:nth-child(3) {
+  left: 28px;
+  bottom: 70px;
+  width: 78px;
+  height: 18px;
+  background: #70d778;
+  transform: rotate(-4deg);
 }
 
-.fern span:nth-child(1) { transform: rotate(-30deg); }
-.fern span:nth-child(2) { transform: rotate(-10deg); height: 142px; }
-.fern span:nth-child(3) { transform: rotate(13deg); height: 136px; }
-.fern span:nth-child(4) { transform: rotate(34deg); height: 116px; }
+.fern span:nth-child(4) {
+  left: 54px;
+  bottom: 52px;
+  width: 76px;
+  height: 18px;
+  background: #48a85f;
+  transform: rotate(22deg);
+}
 
 .bonfire {
   position: absolute;
   right: 50%;
-  bottom: 42px;
-  width: 142px;
-  height: 190px;
+  bottom: 40px;
+  width: 150px;
+  height: 150px;
   transform: translateX(50%);
+}
+
+.bonfire::before {
+  position: absolute;
+  inset: 20px 0 6px;
+  content: "";
+  background: radial-gradient(circle, rgba(255, 201, 91, 0.34), transparent 62%);
 }
 
 .flame,
@@ -381,26 +396,27 @@ button {
 
 .flame {
   left: 50%;
-  bottom: 46px;
+  border: 4px solid #6b2d23;
   transform: translateX(-50%);
-  animation: flame 780ms steps(2) infinite;
+  animation: flame 900ms steps(2) infinite;
 }
 
 .flame-back {
-  width: 82px;
-  height: 116px;
+  bottom: 48px;
+  width: 64px;
+  height: 86px;
   background:
-    linear-gradient(135deg, transparent 0 22%, #ffd066 22% 62%, transparent 62%),
-    linear-gradient(45deg, transparent 0 22%, #ff8a3f 22% 66%, transparent 66%);
+    linear-gradient(90deg, transparent 0 14px, #ff8a3f 14px 50px, transparent 50px),
+    linear-gradient(180deg, #ffd46a 0 42%, #f36a32 42% 100%);
+  clip-path: polygon(50% 0, 88% 38%, 78% 100%, 18% 100%, 8% 38%);
 }
 
 .flame-front {
-  bottom: 58px;
-  width: 48px;
-  height: 78px;
-  background:
-    linear-gradient(135deg, transparent 0 22%, #fff1a0 22% 62%, transparent 62%),
-    linear-gradient(45deg, transparent 0 24%, #f25530 24% 66%, transparent 66%);
+  bottom: 56px;
+  width: 36px;
+  height: 58px;
+  background: linear-gradient(180deg, #fff1a0 0 45%, #ffd46a 45% 100%);
+  clip-path: polygon(50% 0, 86% 42%, 72% 100%, 24% 100%, 12% 42%);
   animation-delay: -320ms;
 }
 
@@ -413,21 +429,21 @@ button {
 }
 
 .ember-1 {
-  left: 38px;
-  bottom: 136px;
+  left: 44px;
+  bottom: 126px;
 }
 
 .ember-2 {
-  right: 36px;
-  bottom: 112px;
+  right: 44px;
+  bottom: 108px;
   animation-delay: -0.7s;
 }
 
 .log {
-  bottom: 30px;
-  left: 18px;
-  width: 112px;
-  height: 22px;
+  bottom: 26px;
+  left: 22px;
+  width: 106px;
+  height: 20px;
   border: 4px solid var(--wood-dark);
   background: #9b5935;
 }
@@ -438,6 +454,10 @@ button {
 
 .log-2 {
   transform: rotate(-14deg);
+}
+
+.office-relics {
+  display: none;
 }
 
 .office-relics span {
@@ -503,21 +523,21 @@ p {
 }
 
 h1 {
-  max-width: 720px;
+  max-width: 100%;
   margin-bottom: 18px;
   color: #5b2d28;
-  font-family: "Press Start 2P", monospace;
-  font-size: clamp(2rem, 4.2vw, 4.15rem);
-  line-height: 1.18;
+  font-size: clamp(1.65rem, 3.05vw, 2.85rem);
+  line-height: 1.28;
   letter-spacing: 0;
   text-shadow: 4px 4px 0 #f3bd5f;
+  overflow-wrap: anywhere;
 }
 
 .subtitle,
 .intro-text,
 .prediction-text {
-  font-size: clamp(1.38rem, 2vw, 1.85rem);
-  line-height: 1.28;
+  font-size: clamp(0.72rem, 1.05vw, 0.92rem);
+  line-height: 1.95;
 }
 
 .subtitle {
@@ -526,7 +546,7 @@ h1 {
 }
 
 .intro-text {
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 }
 
 .action-row {
@@ -537,15 +557,15 @@ h1 {
 }
 
 .fortune-button {
-  min-height: 64px;
-  padding: 0 22px;
+  min-height: 62px;
+  padding: 0 20px;
   border: 4px solid var(--wood-dark);
   color: #fff8d8;
   background: #8d4b34;
   box-shadow: 6px 6px 0 var(--shadow);
   cursor: pointer;
-  font-size: clamp(0.72rem, 1.1vw, 0.95rem);
-  line-height: 1.5;
+  font-size: clamp(0.62rem, 0.95vw, 0.8rem);
+  line-height: 1.65;
   transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
 }
 
@@ -624,8 +644,9 @@ h1 {
 }
 
 .paper-shell.has-paper {
-  width: min(780px, 100%);
-  min-height: clamp(560px, 74vw, 760px);
+  width: min(560px, 100%);
+  aspect-ratio: 4 / 5;
+  min-height: 0;
 }
 
 .paper-shell.has-paper .paper-glow {
@@ -634,7 +655,9 @@ h1 {
 }
 
 .paper-shell.has-paper .paper-image {
-  width: min(768px, 100%);
+  width: 100%;
+  height: 100%;
+  max-height: none;
 }
 
 .prediction-card {
@@ -649,13 +672,13 @@ h1 {
 
 .paper-shell.has-paper .prediction-card {
   display: flex;
-  min-height: clamp(560px, 74vw, 760px);
+  min-height: 100%;
   flex-direction: column;
   justify-content: center;
   border-color: transparent;
   background: transparent;
   box-shadow: none;
-  padding: clamp(104px, 14vw, 150px) clamp(58px, 10vw, 104px) clamp(86px, 12vw, 126px);
+  padding: 22% 16% 17%;
 }
 
 .prediction-card::before,
@@ -728,10 +751,11 @@ h1 {
 .prediction-label {
   display: inline-block;
   align-self: flex-start;
-  margin-bottom: 18px;
-  padding: 8px 10px;
+  margin-bottom: 16px;
+  padding: 7px 9px;
   border: 3px solid var(--wood-dark);
   background: #f8cb6e;
+  font-size: clamp(0.48rem, 0.85vw, 0.62rem);
 }
 
 .prediction-card.common .prediction-label {
@@ -745,25 +769,24 @@ h1 {
 
 .prediction-icon {
   position: absolute;
-  top: clamp(88px, 12vw, 130px);
-  right: clamp(58px, 10vw, 104px);
+  top: 18%;
+  right: 16%;
   display: grid;
   place-items: center;
-  width: 72px;
-  height: 72px;
+  width: clamp(42px, 6vw, 58px);
+  height: clamp(42px, 6vw, 58px);
   border: 4px solid var(--wood-dark);
   background: var(--gold);
-  font-size: 2rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   box-shadow: 5px 5px 0 rgba(22, 15, 29, 0.26);
 }
 
 .prediction-card h2 {
   max-width: calc(100% - 100px);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   color: #5b2d28;
-  font-family: "Press Start 2P", monospace;
-  font-size: clamp(1.05rem, 2vw, 1.6rem);
-  line-height: 1.34;
+  font-size: clamp(0.72rem, 1.35vw, 1.05rem);
+  line-height: 1.7;
   letter-spacing: 0;
 }
 
@@ -774,14 +797,14 @@ h1 {
 
 .prediction-text {
   max-width: 760px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .bonus-box {
-  width: min(620px, 100%);
-  padding: 16px;
+  width: 100%;
+  padding: 12px;
   border: 3px solid #9b6335;
-  background: #f7cf79;
+  background: rgba(247, 207, 121, 0.72);
 }
 
 .bonus-box p {
@@ -793,8 +816,8 @@ h1 {
   gap: 4px;
   margin: 0;
   padding-left: 22px;
-  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
-  line-height: 1.35;
+  font-size: clamp(0.58rem, 1vw, 0.74rem);
+  line-height: 1.75;
 }
 
 body.is-reading .pixel-scene {
@@ -926,7 +949,8 @@ body.is-reading .spark {
 
   .fern {
     bottom: 38px;
-    transform: scale(0.72);
+    width: 112px;
+    height: 92px;
   }
 
   .fern-left {
@@ -935,6 +959,7 @@ body.is-reading .spark {
 
   .fern-right {
     right: 12px;
+    transform: scaleX(-1);
   }
 
   .bonfire {
@@ -951,12 +976,13 @@ body.is-reading .spark {
   }
 
   .paper-shell.has-paper {
-    min-height: 520px;
+    width: min(100%, 430px);
+    min-height: 0;
   }
 
   .paper-shell.has-paper .prediction-card {
-    min-height: 520px;
-    padding: 88px 42px 72px;
+    min-height: 100%;
+    padding: 24% 14% 18%;
   }
 
   .prediction-card h2 {
@@ -973,7 +999,11 @@ body.is-reading .spark {
   }
 
   .paper-shell.has-paper .prediction-icon {
-    position: static;
+    position: absolute;
+    top: 17%;
+    right: 14%;
+    width: 42px;
+    height: 42px;
   }
 }
 
