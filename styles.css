@@ -847,12 +847,12 @@ h1 {
 }
 
 .prediction-content {
-  --label-font: clamp(0.58rem, 0.75vw, 0.72rem);
-  --title-font: clamp(1rem, 1.22vw, 1.35rem);
-  --text-font: clamp(0.78rem, 0.92vw, 1rem);
-  --bonus-label-font: clamp(0.54rem, 0.68vw, 0.7rem);
-  --bonus-font: clamp(0.62rem, 0.76vw, 0.82rem);
-  --content-gap: clamp(9px, 1.25svh, 15px);
+  --label-font: clamp(0.64rem, 0.84vw, 0.8rem);
+  --title-font: clamp(1.08rem, 1.36vw, 1.48rem);
+  --text-font: clamp(0.84rem, 1.02vw, 1.1rem);
+  --bonus-label-font: clamp(0.58rem, 0.74vw, 0.76rem);
+  --bonus-font: clamp(0.66rem, 0.84vw, 0.9rem);
+  --content-gap: clamp(13px, 1.7svh, 22px);
 
   display: flex;
   width: 100%;
@@ -866,24 +866,25 @@ h1 {
 }
 
 .prediction-card.fit-compact .prediction-content {
-  --label-font: clamp(0.5rem, 0.66vw, 0.64rem);
-  --title-font: clamp(0.86rem, 1.04vw, 1.1rem);
-  --text-font: clamp(0.68rem, 0.78vw, 0.84rem);
-  --bonus-label-font: clamp(0.48rem, 0.58vw, 0.6rem);
-  --bonus-font: clamp(0.54rem, 0.64vw, 0.68rem);
-  --content-gap: clamp(6px, 0.9svh, 10px);
+  --label-font: clamp(0.54rem, 0.72vw, 0.68rem);
+  --title-font: clamp(0.92rem, 1.12vw, 1.18rem);
+  --text-font: clamp(0.72rem, 0.84vw, 0.9rem);
+  --bonus-label-font: clamp(0.5rem, 0.62vw, 0.64rem);
+  --bonus-font: clamp(0.58rem, 0.68vw, 0.72rem);
+  --content-gap: clamp(8px, 1.1svh, 13px);
 }
 
 .prediction-card.fit-tight .prediction-content {
-  --label-font: clamp(0.44rem, 0.56vw, 0.56rem);
-  --title-font: clamp(0.74rem, 0.9vw, 0.96rem);
-  --text-font: clamp(0.58rem, 0.68vw, 0.72rem);
-  --bonus-label-font: clamp(0.42rem, 0.5vw, 0.52rem);
-  --bonus-font: clamp(0.48rem, 0.56vw, 0.6rem);
-  --content-gap: clamp(4px, 0.6svh, 7px);
+  --label-font: clamp(0.48rem, 0.62vw, 0.6rem);
+  --title-font: clamp(0.8rem, 0.98vw, 1.02rem);
+  --text-font: clamp(0.62rem, 0.72vw, 0.78rem);
+  --bonus-label-font: clamp(0.44rem, 0.54vw, 0.56rem);
+  --bonus-font: clamp(0.5rem, 0.6vw, 0.64rem);
+  --content-gap: clamp(5px, 0.75svh, 9px);
 }
 
 .paper-shell.paper-legendary .prediction-content {
+  --label-font: clamp(0.58rem, 0.75vw, 0.72rem);
   --title-font: clamp(0.88rem, 1.04vw, 1.16rem);
   --text-font: clamp(0.68rem, 0.78vw, 0.84rem);
   --bonus-label-font: clamp(0.48rem, 0.58vw, 0.62rem);
@@ -892,6 +893,7 @@ h1 {
 }
 
 .paper-shell.paper-legendary .prediction-card.fit-compact .prediction-content {
+  --label-font: clamp(0.5rem, 0.66vw, 0.64rem);
   --title-font: clamp(0.72rem, 0.84vw, 0.92rem);
   --text-font: clamp(0.54rem, 0.62vw, 0.66rem);
   --bonus-label-font: clamp(0.4rem, 0.48vw, 0.5rem);
@@ -900,6 +902,7 @@ h1 {
 }
 
 .paper-shell.paper-legendary .prediction-card.fit-tight .prediction-content {
+  --label-font: clamp(0.44rem, 0.56vw, 0.56rem);
   --title-font: clamp(0.62rem, 0.74vw, 0.78rem);
   --text-font: clamp(0.46rem, 0.54vw, 0.58rem);
   --bonus-label-font: clamp(0.34rem, 0.42vw, 0.44rem);
@@ -1063,7 +1066,7 @@ h1 {
 .bonus-box {
   align-self: center;
   width: min(88%, 520px);
-  margin-top: clamp(2px, 0.7svh, 8px);
+  margin-top: clamp(6px, 1.1svh, 14px);
   padding: clamp(10px, 1.3svh, 14px);
   border: 3px solid #9b6335;
   background: rgba(247, 207, 121, 0.72);
@@ -1091,18 +1094,19 @@ h1 {
 
 .prediction-card.fit-compact .bonus-box {
   width: min(89%, 500px);
-  margin-top: clamp(1px, 0.45svh, 5px);
+  margin-top: clamp(3px, 0.75svh, 8px);
   padding: 9px;
 }
 
 .prediction-card.fit-tight .bonus-box {
   width: min(90%, 480px);
-  margin-top: 0;
+  margin-top: clamp(1px, 0.35svh, 4px);
   padding: 7px;
 }
 
 .paper-shell.paper-legendary .bonus-box {
   width: min(92%, 470px);
+  margin-top: clamp(2px, 0.45svh, 5px);
   padding: clamp(6px, 0.7svh, 8px);
 }
 
@@ -1113,11 +1117,13 @@ h1 {
 
 .paper-shell.paper-legendary .prediction-card.fit-compact .bonus-box {
   width: min(94%, 450px);
+  margin-top: clamp(1px, 0.3svh, 3px);
   padding: 5px;
 }
 
 .paper-shell.paper-legendary .prediction-card.fit-tight .bonus-box {
   width: min(96%, 430px);
+  margin-top: 0;
   padding: 4px;
 }
 
@@ -1350,6 +1356,33 @@ body.is-reading .spark {
   }
 
   .paper-shell.has-paper .prediction-content {
+    --label-font: clamp(0.5rem, 2.15vw, 0.6rem);
+    --title-font: clamp(0.72rem, 3.2vw, 0.9rem);
+    --text-font: clamp(0.58rem, 2.5vw, 0.72rem);
+    --bonus-label-font: clamp(0.44rem, 1.95vw, 0.54rem);
+    --bonus-font: clamp(0.5rem, 2.12vw, 0.6rem);
+    --content-gap: clamp(7px, 1.45svh, 12px);
+  }
+
+  .prediction-card.fit-compact .prediction-content {
+    --label-font: clamp(0.43rem, 1.9vw, 0.52rem);
+    --title-font: clamp(0.62rem, 2.75vw, 0.76rem);
+    --text-font: clamp(0.5rem, 2.2vw, 0.62rem);
+    --bonus-label-font: clamp(0.4rem, 1.75vw, 0.48rem);
+    --bonus-font: clamp(0.44rem, 1.9vw, 0.54rem);
+    --content-gap: 5px;
+  }
+
+  .prediction-card.fit-tight .prediction-content {
+    --label-font: clamp(0.38rem, 1.65vw, 0.46rem);
+    --title-font: clamp(0.54rem, 2.4vw, 0.66rem);
+    --text-font: clamp(0.45rem, 1.95vw, 0.54rem);
+    --bonus-label-font: clamp(0.36rem, 1.5vw, 0.42rem);
+    --bonus-font: clamp(0.4rem, 1.7vw, 0.48rem);
+    --content-gap: 4px;
+  }
+
+  .paper-shell.paper-legendary .prediction-content {
     --label-font: clamp(0.46rem, 2vw, 0.56rem);
     --title-font: clamp(0.68rem, 3vw, 0.82rem);
     --text-font: clamp(0.54rem, 2.35vw, 0.66rem);
@@ -1358,7 +1391,7 @@ body.is-reading .spark {
     --content-gap: clamp(5px, 1.1svh, 9px);
   }
 
-  .prediction-card.fit-compact .prediction-content {
+  .paper-shell.paper-legendary .prediction-card.fit-compact .prediction-content {
     --label-font: clamp(0.4rem, 1.75vw, 0.48rem);
     --title-font: clamp(0.58rem, 2.55vw, 0.7rem);
     --text-font: clamp(0.48rem, 2.05vw, 0.58rem);
@@ -1367,7 +1400,7 @@ body.is-reading .spark {
     --content-gap: 4px;
   }
 
-  .prediction-card.fit-tight .prediction-content {
+  .paper-shell.paper-legendary .prediction-card.fit-tight .prediction-content {
     --label-font: clamp(0.36rem, 1.55vw, 0.44rem);
     --title-font: clamp(0.52rem, 2.25vw, 0.62rem);
     --text-font: clamp(0.43rem, 1.85vw, 0.52rem);

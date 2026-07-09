@@ -21,3 +21,4 @@
 - Added the calendar as the first screen using `assets/calendar.png`, with one-page navigation between calendar and predictions.
 - Narrowed and spaced the bonus block on scrolls, with a subtle pulsing effect for legendary bonuses.
 - Expanded the dataset to 90 predictions from `купальские_офисные_предсказания_90.json`, preserving the first 60 entries and keeping uniform selection.
+- Increased spacing between rarity label, prediction text, and bonus block; enlarged common/rare prediction text while keeping legendary scrolls compact.
