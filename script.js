@@ -1,9 +1,3 @@
-const RARITY_WEIGHTS = {
-  common: 70,
-  rare: 25,
-  legendary: 5,
-};
-
 const paperAssets = {
   common: "assets/kupala-paper.png",
   rare: "assets/kupala-paper-rare.png",
@@ -18,167 +12,30 @@ const iconMap = {
   star: "★",
 };
 
-const predictions = [
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "День маленькой победы",
-    text: "Сегодня одна из задач решится быстрее, чем ты ожидаешь.",
-    bonus: ["+3 к уверенности"],
-    icon: "scroll",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Благосклонность кофейных духов",
-    text: "Кофе сегодня окажется особенно удачным и поможет пережить даже самое подозрительное совещание.",
-    bonus: ["Энергия восстановлена"],
-    icon: "coffee",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Спокойный рабочий поток",
-    text: "День окажется легче, чем кажется утром. Не торопись пугаться списка задач.",
-    bonus: ["-2 к стрессу"],
-    icon: "fern",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Удачный разговор",
-    text: "Сегодня подходящий день, чтобы задать вопрос, предложить идею или просто хорошо поговорить с коллегами.",
-    bonus: ["Навык общения +3"],
-    icon: "star",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Найденная мысль",
-    text: "Полезная идея придёт неожиданно. Лучше сразу её записать.",
-    bonus: ["Креативность +4"],
-    icon: "scroll",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Сила перерыва",
-    text: "Небольшая пауза поможет решить больше, чем ещё один час напряжённой работы.",
-    bonus: ["Ресурсы восстановлены"],
-    icon: "coffee",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Тайный союзник",
-    text: "Кто-то из коллег сегодня незаметно облегчит тебе жизнь.",
-    bonus: ["Командный бонус активирован"],
-    icon: "fern",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Чистый почтовый ящик",
-    text: "Сегодня есть шанс закрыть неприятное письмо или задачу, которая давно висела в ожидании.",
-    bonus: ["Тревожность почты -3"],
-    icon: "deadline",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Правильное решение",
-    text: "Интуиция подскажет верный путь даже там, где инструкция выглядит загадочно.",
-    bonus: ["Интуиция +2"],
-    icon: "star",
-  },
-  {
-    rarity: "common",
-    label: "ОБЫЧНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Добрый знак",
-    text: "В ближайшее время произойдёт маленькое, но очень приятное событие.",
-    bonus: ["Настроение +5"],
-    icon: "fern",
-  },
-  {
-    rarity: "rare",
-    label: "РЕДКОЕ ПРЕДСКАЗАНИЕ",
-    title: "Редкий день без суеты",
-    text: "Сегодня окружающий хаос неожиданно обойдёт тебя стороной.",
-    bonus: ["Спокойствие +5", "Защита от срочных задач"],
-    icon: "fern",
-  },
-  {
-    rarity: "rare",
-    label: "РЕДКОЕ ПРЕДСКАЗАНИЕ",
-    title: "Магия закрытого дедлайна",
-    text: "Задача, которую хотелось отложить навсегда, наконец будет завершена.",
-    bonus: ["Достижение открыто"],
-    icon: "deadline",
-  },
-  {
-    rarity: "rare",
-    label: "РЕДКОЕ ПРЕДСКАЗАНИЕ",
-    title: "Благословение офисного папоротника",
-    text: "Сегодня тебя заметит удача. Возможно, она придёт в виде хорошей новости, похвалы или вкусного угощения.",
-    bonus: ["Удача +7"],
-    icon: "fern",
-  },
-  {
-    rarity: "rare",
-    label: "РЕДКОЕ ПРЕДСКАЗАНИЕ",
-    title: "Тайный запас энергии",
-    text: "Во второй половине дня внезапно появятся силы на то, что раньше делать совсем не хотелось.",
-    bonus: ["Энергия восстановлена до 100%"],
-    icon: "coffee",
-  },
-  {
-    rarity: "rare",
-    label: "РЕДКОЕ ПРЕДСКАЗАНИЕ",
-    title: "Приятный сюрприз",
-    text: "Сегодняшний день хранит небольшую неожиданность. Не исключено, что съедобную.",
-    bonus: ["Шанс на вкусное: повышен"],
-    icon: "star",
-  },
-  {
-    rarity: "legendary",
-    label: "ЛЕГЕНДАРНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Цветок офисного папоротника",
-    text: "Ты нашёл редчайший знак Иванова дня. Сегодня удача будет особенно благосклонна к твоим идеям.",
-    bonus: ["Удача +10", "Уверенность +10", "Иммунитет к стрессу активирован"],
-    icon: "fern",
-  },
-  {
-    rarity: "legendary",
-    label: "ЛЕГЕНДАРНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Легендарный рабочий день",
-    text: "Все нужные люди ответят, техника не подведёт, а задачи будут закрываться почти самостоятельно.",
-    bonus: ["Продуктивность +15", "Критический успех"],
-    icon: "star",
-  },
-  {
-    rarity: "legendary",
-    label: "ЛЕГЕНДАРНОЕ ПРЕДСКАЗАНИЕ",
-    title: "Великая купальская премия",
-    text: "Офисные духи не могут обещать денежную награду, но настоятельно рекомендуют ждать приятных новостей.",
-    bonus: ["Финансовый оптимизм +10"],
-    icon: "scroll",
-  },
-];
-
+const dataSource = window.KUPALA_PREDICTIONS ?? {};
+const predictions = Array.isArray(dataSource.predictions) ? dataSource.predictions : [];
 const loadingCard = document.querySelector("#loadingCard");
+const calendarScreen = document.querySelector("#calendarScreen");
+const fortuneScreen = document.querySelector("#fortuneScreen");
+const showFortunesButton = document.querySelector("#showFortunesButton");
+const showCalendarButton = document.querySelector("#showCalendarButton");
 const fortuneButton = document.querySelector("#fortuneButton");
+const repeatButton = document.querySelector("#repeatButton");
 const statusText = document.querySelector("#statusText");
+const resultStage = document.querySelector("#resultStage");
 const paperShell = document.querySelector("#paperShell");
 const paperImage = document.querySelector("#paperImage");
 const predictionCard = document.querySelector("#predictionCard");
+const predictionContent = document.querySelector("#predictionContent");
 const predictionLabel = document.querySelector("#predictionLabel");
 const predictionIcon = document.querySelector("#predictionIcon");
 const predictionTitle = document.querySelector("#predictionTitle");
 const predictionText = document.querySelector("#predictionText");
 const predictionBonus = document.querySelector("#predictionBonus");
 
-let lastPredictionIndex = -1;
+let lastPredictionId = null;
 let isReading = false;
+let readRequestId = 0;
 
 window.setTimeout(() => {
   loadingCard?.classList.add("is-hidden");
@@ -200,83 +57,113 @@ if (paperImage?.complete && paperImage.naturalWidth > 0) {
   showLoadedPaperImage();
 }
 
-fortuneButton?.addEventListener("click", () => {
-  if (isReading) {
+showFortunesButton?.addEventListener("click", showFortunes);
+showCalendarButton?.addEventListener("click", showCalendar);
+fortuneButton?.addEventListener("click", readOfficeFate);
+repeatButton?.addEventListener("click", readOfficeFate);
+window.addEventListener("resize", () => {
+  if (paperShell.classList.contains("is-visible")) {
+    fitPredictionText();
+  }
+});
+
+if (predictions.length === 0) {
+  disableFortuneButtons();
+  statusText.textContent = "Предсказания пока не найдены.";
+}
+
+showCalendar();
+
+function showCalendar() {
+  readRequestId += 1;
+  calendarScreen?.classList.add("is-active");
+  fortuneScreen?.classList.remove("is-active");
+  document.body.classList.add("is-calendar");
+  document.body.classList.remove("is-fortunes", "has-result", "is-reading");
+  resultStage.classList.remove("has-result");
+  paperShell.classList.remove("is-visible", "is-rolling");
+  setReadingState(false);
+}
+
+function showFortunes() {
+  calendarScreen?.classList.remove("is-active");
+  fortuneScreen?.classList.add("is-active");
+  document.body.classList.remove("is-calendar", "has-result", "is-reading");
+  document.body.classList.add("is-fortunes");
+  resultStage.classList.remove("has-result");
+  paperShell.classList.remove("is-visible", "is-rolling");
+  setReadingState(false);
+  statusText.textContent =
+    predictions.length === 0 ? "Предсказания пока не найдены." : "Магический канал свободен.";
+}
+
+function readOfficeFate() {
+  if (isReading || predictions.length === 0) {
     return;
   }
 
-  readOfficeFate();
-});
-
-function readOfficeFate() {
-  isReading = true;
-  fortuneButton.disabled = true;
-  fortuneButton.textContent = "Ищем знак...";
+  setReadingState(true);
+  const currentRequestId = readRequestId + 1;
+  readRequestId = currentRequestId;
   statusText.textContent = "Офисные духи советуются...";
   document.body.classList.add("is-reading");
   paperShell.classList.remove("is-visible");
   paperShell.classList.add("is-rolling");
 
   window.setTimeout(() => {
-    const predictionIndex = getRandomPredictionIndex();
-    const prediction = predictions[predictionIndex];
-    lastPredictionIndex = predictionIndex;
+    if (currentRequestId !== readRequestId) {
+      return;
+    }
+
+    const prediction = getRandomPrediction();
+    lastPredictionId = prediction.id;
     renderPrediction(prediction);
 
     paperShell.classList.remove("is-rolling");
     paperShell.classList.add("is-visible");
+    resultStage.classList.add("has-result");
+    document.body.classList.add("has-result");
     document.body.classList.remove("is-reading");
-    fortuneButton.disabled = false;
-    fortuneButton.textContent = "Получить ещё один знак";
+    setReadingState(false);
     statusText.textContent = "Предсказание разблокировано.";
-    isReading = false;
-    paperShell.scrollIntoView({ behavior: "smooth", block: "center" });
+    resultStage.scrollIntoView({ behavior: "smooth", block: "center" });
   }, 1100);
 }
 
-function getRandomPredictionIndex() {
-  const rarity = getWeightedRarity();
-  const pool = predictions
-    .map((prediction, index) => ({ prediction, index }))
-    .filter(({ prediction, index }) => {
-      return prediction.rarity === rarity && index !== lastPredictionIndex;
-    });
-
-  const fallbackPool = predictions
-    .map((prediction, index) => ({ prediction, index }))
-    .filter(({ index }) => index !== lastPredictionIndex);
-
-  const availablePool = pool.length > 0 ? pool : fallbackPool;
-  const randomItem = availablePool[Math.floor(Math.random() * availablePool.length)];
-
-  return randomItem.index;
+function setReadingState(isActive) {
+  isReading = isActive;
+  const shouldDisable = isActive || predictions.length === 0;
+  fortuneButton.disabled = shouldDisable;
+  repeatButton.disabled = shouldDisable;
+  fortuneButton.textContent = isActive ? "Ищем знак..." : "Получить предсказание";
+  repeatButton.textContent = isActive ? "Ищем знак..." : "Получить ещё один знак";
 }
 
-function getWeightedRarity() {
-  const totalWeight = Object.values(RARITY_WEIGHTS).reduce((sum, weight) => {
-    return sum + weight;
-  }, 0);
-  let roll = Math.random() * totalWeight;
+function disableFortuneButtons() {
+  fortuneButton.disabled = true;
+  repeatButton.disabled = true;
+}
 
-  for (const [rarity, weight] of Object.entries(RARITY_WEIGHTS)) {
-    if (roll < weight) {
-      return rarity;
-    }
+function getRandomPrediction() {
+  const availablePredictions = predictions.filter((prediction) => {
+    return prediction.id !== lastPredictionId;
+  });
+  const pool = availablePredictions.length > 0 ? availablePredictions : predictions;
 
-    roll -= weight;
-  }
-
-  return "common";
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 function renderPrediction(prediction) {
-  paperImage.src = paperAssets[prediction.rarity] ?? paperAssets.common;
-  predictionCard.classList.remove("common", "rare", "legendary");
-  predictionCard.classList.add(prediction.rarity);
+  const rarity = prediction.rarity ?? "common";
+  const paperAsset = prediction.paperAsset ?? paperAssets[rarity] ?? paperAssets.common;
+
+  paperImage.src = paperAsset;
+  predictionCard.classList.remove("common", "rare", "legendary", "fit-compact", "fit-tight");
+  predictionCard.classList.add(rarity);
   paperShell.classList.remove("paper-common", "paper-rare", "paper-legendary");
-  paperShell.classList.add(`paper-${prediction.rarity}`);
-  predictionLabel.textContent = prediction.label;
-  predictionIcon.textContent = iconMap[prediction.icon] ?? "✦";
+  paperShell.classList.add(`paper-${rarity}`);
+  predictionLabel.textContent = getRarityLabel(prediction);
+  predictionIcon.textContent = getPredictionIcon(prediction);
   predictionTitle.textContent = prediction.title;
   predictionText.textContent = prediction.text;
   predictionBonus.replaceChildren(
@@ -286,6 +173,65 @@ function renderPrediction(prediction) {
       return item;
     }),
   );
+  window.requestAnimationFrame(fitPredictionText);
+}
+
+function fitPredictionText() {
+  predictionCard.classList.remove("fit-compact", "fit-tight");
+
+  if (!predictionContent) {
+    return;
+  }
+
+  window.requestAnimationFrame(() => {
+    if (isPredictionContentOverflowing()) {
+      predictionCard.classList.add("fit-compact");
+    }
+
+    window.requestAnimationFrame(() => {
+      if (isPredictionContentOverflowing()) {
+        predictionCard.classList.add("fit-tight");
+      }
+    });
+  });
+}
+
+function isPredictionContentOverflowing() {
+  const cardBox = predictionCard.getBoundingClientRect();
+  const contentBox = predictionContent.getBoundingClientRect();
+
+  return (
+    predictionContent.scrollHeight > predictionContent.clientHeight + 1 ||
+    predictionContent.scrollWidth > predictionContent.clientWidth + 1 ||
+    contentBox.top < cardBox.top ||
+    contentBox.bottom > cardBox.bottom ||
+    contentBox.left < cardBox.left ||
+    contentBox.right > cardBox.right
+  );
+}
+
+function getRarityLabel(prediction) {
+  if (!prediction.rarityRu) {
+    return "Предсказание";
+  }
+
+  return prediction.rarityRu.charAt(0).toUpperCase() + prediction.rarityRu.slice(1);
+}
+
+function getPredictionIcon(prediction) {
+  if (prediction.icon && iconMap[prediction.icon]) {
+    return iconMap[prediction.icon];
+  }
+
+  if (prediction.rarity === "legendary") {
+    return iconMap.fern;
+  }
+
+  if (prediction.rarity === "rare") {
+    return iconMap.star;
+  }
+
+  return iconMap.scroll;
 }
 
 function hideMissingPaperImage() {

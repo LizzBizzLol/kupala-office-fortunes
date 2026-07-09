@@ -24,7 +24,23 @@
       </div>
     </div>
 
-    <div class="night-sky" aria-hidden="true">
+    <section class="calendar-screen" id="calendarScreen" aria-label="Календарь событий">
+      <img
+        class="calendar-image"
+        src="assets/calendar.png"
+        alt="Календарь событий"
+      />
+      <button class="calendar-button" id="showFortunesButton" type="button">
+        Предсказания
+      </button>
+    </section>
+
+    <section class="fortune-screen" id="fortuneScreen" aria-label="Купальские офисные предсказания">
+      <button class="screen-nav-button" id="showCalendarButton" type="button">
+        ← К календарю
+      </button>
+
+      <div class="night-sky" aria-hidden="true">
       <span class="moon"></span>
       <span class="cloud cloud-1"></span>
       <span class="cloud cloud-2"></span>
@@ -42,9 +58,9 @@
       <span class="spark spark-2"></span>
       <span class="spark spark-3"></span>
       <span class="spark spark-4"></span>
-    </div>
+      </div>
 
-    <main class="page-shell">
+      <main class="page-shell">
       <section class="oracle-window" aria-labelledby="pageTitle">
         <div class="window-header" aria-hidden="true">
           <span></span>
@@ -110,27 +126,34 @@
             aria-hidden="true"
           />
           <article class="prediction-card" id="predictionCard">
-            <p class="prediction-label" id="predictionLabel">
-              ПРЕДСКАЗАНИЕ ЗАКРЫТО
-            </p>
-            <div class="prediction-icon" id="predictionIcon" aria-hidden="true">
-              ✦
-            </div>
-            <h2 id="predictionTitle">Свиток ждёт своего часа</h2>
-            <p class="prediction-text" id="predictionText">
-              Нажми на кнопку, чтобы офисные духи выбрали знак.
-            </p>
-            <div class="bonus-box">
-              <p>ОФИСНЫЙ БОНУС</p>
-              <ul id="predictionBonus">
-                <li>Магия в режиме ожидания</li>
-              </ul>
+            <div class="prediction-content" id="predictionContent">
+              <p class="prediction-label" id="predictionLabel">
+                ПРЕДСКАЗАНИЕ ЗАКРЫТО
+              </p>
+              <div class="prediction-icon" id="predictionIcon" aria-hidden="true">
+                ✦
+              </div>
+              <h2 id="predictionTitle">Свиток ждёт своего часа</h2>
+              <p class="prediction-text" id="predictionText">
+                Нажми на кнопку, чтобы офисные духи выбрали знак.
+              </p>
+              <div class="bonus-box">
+                <p>ОФИСНЫЙ БОНУС</p>
+                <ul id="predictionBonus">
+                  <li>Магия в режиме ожидания</li>
+                </ul>
+              </div>
             </div>
           </article>
         </div>
+        <button class="fortune-button repeat-button" id="repeatButton" type="button">
+          Получить ещё один знак
+        </button>
       </section>
-    </main>
+      </main>
+    </section>
 
+    <script src="predictions.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
