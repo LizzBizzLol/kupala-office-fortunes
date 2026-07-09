@@ -727,7 +727,7 @@ h1 {
   height: 1px;
   min-height: 0;
   margin: 0;
-  gap: clamp(16px, 3svh, 32px);
+  gap: clamp(26px, 4svh, 44px);
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
@@ -806,7 +806,7 @@ h1 {
 }
 
 .paper-shell.has-paper.paper-legendary {
-  width: min(560px, 78vw, 56svh);
+  width: min(520px, 76vw, 51svh);
   aspect-ratio: 2 / 3;
 }
 
@@ -843,7 +843,7 @@ h1 {
 }
 
 .paper-shell.has-paper.paper-legendary .prediction-card {
-  padding: 20% 16% 20%;
+  padding: 18.5% 16% 26%;
 }
 
 .prediction-content {
@@ -881,6 +881,30 @@ h1 {
   --bonus-label-font: clamp(0.42rem, 0.5vw, 0.52rem);
   --bonus-font: clamp(0.48rem, 0.56vw, 0.6rem);
   --content-gap: clamp(4px, 0.6svh, 7px);
+}
+
+.paper-shell.paper-legendary .prediction-content {
+  --title-font: clamp(0.88rem, 1.04vw, 1.16rem);
+  --text-font: clamp(0.68rem, 0.78vw, 0.84rem);
+  --bonus-label-font: clamp(0.48rem, 0.58vw, 0.62rem);
+  --bonus-font: clamp(0.54rem, 0.64vw, 0.68rem);
+  --content-gap: clamp(6px, 0.9svh, 10px);
+}
+
+.paper-shell.paper-legendary .prediction-card.fit-compact .prediction-content {
+  --title-font: clamp(0.72rem, 0.84vw, 0.92rem);
+  --text-font: clamp(0.54rem, 0.62vw, 0.66rem);
+  --bonus-label-font: clamp(0.4rem, 0.48vw, 0.5rem);
+  --bonus-font: clamp(0.44rem, 0.5vw, 0.54rem);
+  --content-gap: clamp(3px, 0.45svh, 6px);
+}
+
+.paper-shell.paper-legendary .prediction-card.fit-tight .prediction-content {
+  --title-font: clamp(0.62rem, 0.74vw, 0.78rem);
+  --text-font: clamp(0.46rem, 0.54vw, 0.58rem);
+  --bonus-label-font: clamp(0.34rem, 0.42vw, 0.44rem);
+  --bonus-font: clamp(0.38rem, 0.44vw, 0.48rem);
+  --content-gap: clamp(2px, 0.3svh, 4px);
 }
 
 .prediction-card::before,
@@ -985,12 +1009,12 @@ h1 {
 
 .prediction-icon {
   position: absolute;
-  top: 18%;
-  right: 16%;
+  top: 8%;
+  right: 5%;
   display: grid;
   place-items: center;
-  width: clamp(42px, 6vw, 58px);
-  height: clamp(42px, 6vw, 58px);
+  width: clamp(38px, 5.2vw, 54px);
+  height: clamp(38px, 5.2vw, 54px);
   border: 4px solid var(--wood-dark);
   background: var(--gold);
   font-size: clamp(1.1rem, 2vw, 1.5rem);
@@ -1067,6 +1091,25 @@ h1 {
   width: min(90%, 480px);
   margin-top: 0;
   padding: 7px;
+}
+
+.paper-shell.paper-legendary .bonus-box {
+  width: min(84%, 430px);
+  padding: clamp(7px, 0.9svh, 10px);
+}
+
+.paper-shell.paper-legendary .bonus-box ul {
+  line-height: 1.42;
+}
+
+.paper-shell.paper-legendary .prediction-card.fit-compact .bonus-box {
+  width: min(82%, 390px);
+  padding: 6px;
+}
+
+.paper-shell.paper-legendary .prediction-card.fit-tight .bonus-box {
+  width: min(80%, 360px);
+  padding: 5px;
 }
 
 .prediction-card.fit-compact .bonus-box ul,
@@ -1285,7 +1328,7 @@ body.is-reading .spark {
   }
 
   .paper-shell.has-paper.paper-legendary {
-    width: min(100%, 380px);
+    width: min(100%, 360px);
   }
 
   .paper-shell.has-paper .prediction-card {
@@ -1294,7 +1337,7 @@ body.is-reading .spark {
   }
 
   .paper-shell.has-paper.paper-legendary .prediction-card {
-    padding: 22% 13% 15%;
+    padding: 19% 13% 24%;
   }
 
   .paper-shell.has-paper .prediction-content {
@@ -1372,10 +1415,10 @@ body.is-reading .spark {
 
   .paper-shell.has-paper .prediction-icon {
     position: absolute;
-    top: 16%;
-    right: 13%;
-    width: 34px;
-    height: 34px;
+    top: 7%;
+    right: 4%;
+    width: 30px;
+    height: 30px;
     border-width: 3px;
     font-size: 1rem;
   }

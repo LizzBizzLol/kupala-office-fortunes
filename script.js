@@ -199,6 +199,13 @@ function fitPredictionText() {
 function isPredictionContentOverflowing() {
   const cardBox = predictionCard.getBoundingClientRect();
   const contentBox = predictionContent.getBoundingClientRect();
+  const bonusBox = predictionContent.querySelector(".bonus-box")?.getBoundingClientRect();
+  const repeatBox = repeatButton?.getBoundingClientRect();
+  const paperBox = paperShell.getBoundingClientRect();
+  const safeButtonGap = Math.min(Math.max(window.innerHeight * 0.035, 24), 44);
+  const bonusBottomLimit = predictionCard.classList.contains("legendary")
+    ? cardBox.bottom - cardBox.height * 0.07
+    : cardBox.bottom;
 
   return (
     predictionContent.scrollHeight > predictionContent.clientHeight + 1 ||
@@ -206,7 +213,9 @@ function isPredictionContentOverflowing() {
     contentBox.top < cardBox.top ||
     contentBox.bottom > cardBox.bottom ||
     contentBox.left < cardBox.left ||
-    contentBox.right > cardBox.right
+    contentBox.right > cardBox.right ||
+    (bonusBox && bonusBox.bottom > bonusBottomLimit) ||
+    (repeatBox && repeatBox.top - paperBox.bottom < safeButtonGap)
   );
 }
 
