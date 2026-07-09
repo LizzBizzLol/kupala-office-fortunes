@@ -7,7 +7,7 @@ const RARITY_WEIGHTS = {
 const paperAssets = {
   common: "assets/kupala-paper.png",
   rare: "assets/kupala-paper-rare.png",
-  legendary: "assets/kupala-paper-rare.png",
+  legendary: "assets/kupala-paper-legendary.png",
 };
 
 const iconMap = {
@@ -273,6 +273,8 @@ function renderPrediction(prediction) {
   paperImage.src = paperAssets[prediction.rarity] ?? paperAssets.common;
   predictionCard.classList.remove("common", "rare", "legendary");
   predictionCard.classList.add(prediction.rarity);
+  paperShell.classList.remove("paper-common", "paper-rare", "paper-legendary");
+  paperShell.classList.add(`paper-${prediction.rarity}`);
   predictionLabel.textContent = prediction.label;
   predictionIcon.textContent = iconMap[prediction.icon] ?? "✦";
   predictionTitle.textContent = prediction.title;

@@ -23,13 +23,15 @@
 Основные ассеты:
 
 - `assets/kupala-paper.png` — common.
-- `assets/kupala-paper-rare.png` — rare и legendary.
+- `assets/kupala-paper-rare.png` — rare.
+- `assets/kupala-paper-legendary.png` — legendary.
 
 Рекомендации:
 
 - PNG с прозрачным фоном.
 - Пиксельный стиль.
-- Текущий размер каждого свитка: 768 x 960 px.
+- Текущий размер common/rare: 768 x 960 px.
+- Текущий размер legendary: 768 x 1152 px.
 - Файл можно заменить без изменений в HTML, CSS или JavaScript.
 - Сайт работает и без файла: карточка результата остаётся CSS fallback.
 

@@ -4,5 +4,6 @@
 
 - `kupala-paper.png`
 - `kupala-paper-rare.png`
+- `kupala-paper-legendary.png`
 
-Файлы можно заменить без изменений в HTML или CSS. Если добавится отдельный legendary-свиток, пропишите его в `paperAssets` в `script.js`.
+Файлы можно заменить без изменений в HTML. Если меняются пропорции свитков, проверьте соответствующие правила `.paper-*` в `styles.css`.
