@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Пиксельный рандомайзер добрых офисных предсказаний на Ивана Купала."
+    />
+    <title>Купальские офисные предсказания</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="loading-card" id="loadingCard" aria-live="polite">
+      <p class="tiny-label">Офисные духи просыпаются...</p>
+      <div class="loading-bar" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="night-sky" aria-hidden="true">
+      <span class="moon"></span>
+      <span class="cloud cloud-1"></span>
+      <span class="cloud cloud-2"></span>
+      <span class="firefly firefly-1"></span>
+      <span class="firefly firefly-2"></span>
+      <span class="firefly firefly-3"></span>
+      <span class="firefly firefly-4"></span>
+      <span class="firefly firefly-5"></span>
+      <span class="firefly firefly-6"></span>
+      <span class="firefly firefly-7"></span>
+      <span class="firefly firefly-8"></span>
+      <span class="firefly firefly-9"></span>
+      <span class="firefly firefly-10"></span>
+      <span class="spark spark-1"></span>
+      <span class="spark spark-2"></span>
+      <span class="spark spark-3"></span>
+      <span class="spark spark-4"></span>
+    </div>
+
+    <main class="page-shell">
+      <section class="oracle-window" aria-labelledby="pageTitle">
+        <div class="window-header" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>OFFICE KUPALA MAGIC</strong>
+        </div>
+
+        <div class="oracle-layout">
+          <div class="pixel-scene" aria-label="Пиксельная купальская поляна">
+            <div class="scene-glow"></div>
+            <div class="fern fern-left">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="fern fern-right">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="bonfire">
+              <span class="flame flame-back"></span>
+              <span class="flame flame-front"></span>
+              <span class="ember ember-1"></span>
+              <span class="ember ember-2"></span>
+              <span class="log log-1"></span>
+              <span class="log log-2"></span>
+            </div>
+            <div class="office-relics">
+              <span class="coffee"></span>
+              <span class="laptop"></span>
+            </div>
+          </div>
+
+          <div class="intro-copy">
+            <p class="tiny-label">DAILY OFFICE FATE</p>
+            <h1 id="pageTitle">Купальские офисные предсказания</h1>
+            <p class="subtitle">
+              В день Ивана Купала даже офисные духи готовы немного приоткрыть
+              завесу будущего.
+            </p>
+            <p class="intro-text">
+              Нажми на кнопку и узнай, что ждёт тебя в ближайшее время.
+            </p>
+
+            <div class="action-row">
+              <button class="fortune-button" id="fortuneButton" type="button">
+                Получить предсказание
+              </button>
+              <p class="status-text" id="statusText" role="status">
+                Магический канал свободен.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-stage" id="resultStage" aria-live="polite">
+        <div class="paper-shell" id="paperShell">
+          <div class="paper-glow" aria-hidden="true"></div>
+          <img
+            class="paper-image"
+            id="paperImage"
+            src="assets/kupala-paper.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <article class="prediction-card" id="predictionCard">
+            <p class="prediction-label" id="predictionLabel">
+              PREDICTION LOCKED
+            </p>
+            <div class="prediction-icon" id="predictionIcon" aria-hidden="true">
+              ✦
+            </div>
+            <h2 id="predictionTitle">Свиток ждёт своего часа</h2>
+            <p class="prediction-text" id="predictionText">
+              Нажми на кнопку, чтобы офисные духи выбрали знак.
+            </p>
+            <div class="bonus-box">
+              <p>OFFICE BONUS</p>
+              <ul id="predictionBonus">
+                <li>Магия в режиме ожидания</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
